@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+			<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	<title>Q4Quiz1</title>
+	<style>
+		.container {
+			padding: 5px;
+		}
+		nav {
+				background-color: #52685d;
+				font-family: "Bebas Neue";
+			}
+		body {
+			font-family: Arial;
+		}
+
+	</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed top">
+<div class="container-fluid">
+	<a class="navbar-brand" href="index.html"></a>
+
+
+	<div class="collapse navbar-collapse">
+		<ul class="navbar-nav me-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="index.html">Pastee | BMI CALCULATOR</a>
+			</li>
+		</ul>
+
+		<form class="d-flex">
+			<input class="form-control" type="text" style="font-family: Nunito;" placeholder="Search...">
+			<button class="btn btn-primary" type="button"><span style= "color: white; font-family: Nunito;">Search</span></button>
+		</form>
+	</div>
+</div>
+</nav>
+<div class="container">
+	<br><br><br>
+	<div class="row">
+		<div class="col-md-6">
+			<h1> BMI Calculator </h1>
+			<p style="color: gray;"> Body Mass Index (BMI) is a measure that calculates your weight in relation to your height. It is usually used to assess body fat percentage and predict potential health risks (Cleveland Clinic, n.d.).</p>
+			<details>
+				<summary>Instructions:</summary>
+				<p style="color: gray;"> To calculate your Body Mass Index (BMI) using this calculator, input your weight in kilograms and height in meters. After that, press calculate.</p>
+			</details>
+
+			<br><br>
+
+			<input type="number" class="form-control" placeholder="weight in kilograms" id="weight">
+			<br><br>
+			<input type="number" class="form-control" placeholder="height in meters" id="height">
+			<br><br>
+			<button type="button" class="btn btn-warning" onclick="calculate()">Calculate</button>
+	</div>
+	<h1 style="text-align: center;"> Output </h1>
+	<h4 id="output" style="text-align: center; color: gray; font-weight: 400;">Result</h4>
+	<p></p>
+</div>
+</div>
+<p style="border-top: grey solid 1px; text-align: center; color: gray;"> Lucas T. Reyes FV 9 - Emerald SY 24-25</p>
+<a href="https://my.clevelandclinic.org/health/articles/9464-body-mass-index-bmi" style=" color: grey;"> Source: https://my.clevelandclinic.org/health/articles/9464-body-mass-index-bmi </a>
+<script>
+ 	// This is where I did the calculations
+	function calculate() {
+	var num1 = document.getElementById("height").value;
+	var meters = Math.pow(num1,2);
+	var kilos = document.getElementById("weight").value;
+	var bmi = kilos/meters;
+	let bmii = bmi.toFixed(2);
+	 document.getElementById("output").innerHTML = "Your BMI is " + bmii;
+// These are the if else statements used
+	 if (bmii<18.5)
+	 	{ alert("Uh oh, you are underweight. It is recommended to increase your intake to prevent malnutrition.")}
+	 else if (bmii >= 18.5 && bmii<=24.9)
+	 	{ alert("You are doing great! You have a normal weight for your height.")}
+	 else if (bmii >=25 && bmii<= 29.9)
+	 	{ alert("Oh! You are overweight. You are either a bodybuilder or chubby!")}
+	
+	else if (bmii >=30)
+		{ alert("You are obese! Please seek a medical professional to assess your health.")}
+
+	
+}
+
+</script>
+</body>
+</html>
